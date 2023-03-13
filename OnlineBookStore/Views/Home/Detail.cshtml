@@ -1,0 +1,43 @@
+﻿@model OnlineBookStore.Models.Detail
+
+@{
+    ViewBag.Title = "Detail";
+}
+
+<h2>Detail</h2>
+
+<div>
+	<h4>@Html.DisplayFor(model => model.BookTitle)</h4>
+	<hr />
+	<dl class="dl-horizontal">
+		<dt>
+			@Html.DisplayNameFor(model => model.BookTitle)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.BookTitle)
+		</dd>
+
+		<dt>
+			@Html.DisplayNameFor(model => model.BookId)
+		</dt>
+
+		<dd>
+			@Html.DisplayFor(model => model.BookId)
+		</dd>
+		@if (Model.ReservedId != null)
+		{
+			<dt>
+				@Html.DisplayNameFor(model => model.ReservedId)
+			</dt>
+
+			<dd>
+				@Html.DisplayFor(model => model.ReservedId)
+			</dd>
+		}
+
+	</dl>
+</div>
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>

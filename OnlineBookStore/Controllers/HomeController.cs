@@ -74,6 +74,15 @@ namespace OnlineBookStore.Controllers
 			}
 			return View(obj);
 		}
+		//delete data
+		public ActionResult Delete(string id)
+		{
+			var data = _context.Books.Where(x => x.BookID == id).FirstOrDefault();
+			_context.Books.Remove(data);
+			_context.SaveChanges();
+			ViewBag.Message = "Data Removed Succesfully";
+			return RedirectToAction("index");
+		}
 
 
 	}
