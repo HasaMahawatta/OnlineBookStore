@@ -78,5 +78,8 @@ D:\project\Final\OnlineBookStore\OnlineBookStore\obj\Debug\OnlineBookStore.cspro
 D:\project\Final\OnlineBookStore\OnlineBookStore\obj\Debug\OnlineBookStore.csproj.CopyComplete
 D:\project\Final\OnlineBookStore\OnlineBookStore\obj\Debug\OnlineBookStore.dll
 D:\project\Final\OnlineBookStore\OnlineBookStore\obj\Debug\OnlineBookStore.pdb
+D:\project\Final\OnlineBookStore\OnlineBookStore\obj\Debug\OnlineBookStore.csproj.AssemblyReference.cache
+D:\project\Final\OnlineBookStore\OnlineBookStore\bin\EntityFramework.SqlServer.dll
+D:\project\Final\OnlineBookStore\OnlineBookStore\bin\EntityFramework.SqlServer.xml
 D:\project\Final\OnlineBookStore\OnlineBookStore\obj\Debug\OnlineBookStore.Migrations.Initial.resources
 D:\project\Final\OnlineBookStore\OnlineBookStore\obj\Debug\OnlineBookStore.csproj.GenerateResource.cache

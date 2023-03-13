@@ -35,6 +35,45 @@ namespace OnlineBookStore.Controllers
 			ViewBag.Message = "Book Inserted Successfully";
 			return RedirectToAction("index");
 		}
+		//reserving a book
+		public ActionResult Reserve(String id)
+		{
+			var data = _context.Books.Where(x => x.BookID == id).FirstOrDefault();
+			if (data != null)
+			{
+				data.IsReserved = true;
+				_context.SaveChanges();
+
+				ReserveDetails reserveDetail = new ReserveDetails();
+				reserveDetail.ReserveId = Guid.NewGuid().ToString();
+				reserveDetail.BookId = id;
+				reserveDetail.Books = data;
+				_context.ReserveDetails.Add(reserveDetail);
+				_context.SaveChanges();
+
+				ViewBag.Message = "Book Reserved Sucessfully";
+
+			}
+			return RedirectToAction("index");
+
+		}
+		//get reserve details
+		[HttpGet]
+		public ActionResult Detail(String id)
+		{
+			var data = _context.Books.Where(x => x.BookID == id).FirstOrDefault();
+			var reserve = _context.ReserveDetails.Where(x => x.BookId == id).FirstOrDefault();
+			//object to pass reserve details to view
+			Detail obj = new Detail();  
+
+			obj.BookTitle = data.BookTitle;
+			obj.BookId = id;
+			if (reserve != null)
+			{
+				obj.ReservedId = reserve.ReserveId;
+			}
+			return View(obj);
+		}
 
 
 	}
